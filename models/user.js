@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
   email: { type: String },
   password: { type: String },
   profileImage: { type: String },
-  githubId: { type: Number },
+  facebookId: { type: String },
+  // githubId: { type: Number },
   group: { type: mongoose.Schema.ObjectId, ref: 'Group' }
 });
 
@@ -47,7 +48,7 @@ userSchema
 });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this.password && !this.githubId) {
+  if(!this.password && !this.facebookId) {
     this.invalidate('password', 'required');
   }
   if(this.isModified('password') && this._passwordConfirmation !== this.password){

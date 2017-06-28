@@ -83,8 +83,11 @@ router.route('/login')
 router.route('/register')
   .post(imageUpload, auth.register);
 
-router.route('/oauth/github')
-  .post(oauth.github);
+// router.route('/oauth/github')
+//   .post(oauth.github);
+
+router.route('/oauth/facebook')
+.post(oauth.facebook);
 
 router.all('/*', (req, res) => res.notFound());
 
