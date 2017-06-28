@@ -10,7 +10,6 @@ const userSchema = new mongoose.Schema({
   password: { type: String },
   profileImage: { type: String },
   facebookId: { type: String },
-  // githubId: { type: Number },
   group: { type: mongoose.Schema.ObjectId, ref: 'Group' }
 });
 
