@@ -92,7 +92,7 @@ function facebook(req, res, next) {
           });
         }
         user.facebookId = profile.id;
-        // user.image = profile.picture.data.url;
+        user.image = profile.picture.data.url;
         console.log('user just before save', user);
         return user.save();
       });
