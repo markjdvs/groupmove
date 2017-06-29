@@ -17,13 +17,13 @@
   <nav>
     <div class="links">
       <ul class="link">
-        <li ng-if="main.isAuthenticated()"><a ui-sref="propsIndex"><img src="/images/search.png"></a></li>
-        <li ng-if="(main.isAuthenticated() && main.currentUserGroupId)"><a ui-sref="groupsHome({ id: main.currentUserGroupId })"><img src="/images/group.png"></a></li>
-        <li ng-if="main.isAuthenticated() && !main.currentUserGroupId"><a ui-sref="groupsNew"><img src="/images/addgroup.png"></a></li>
-        <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUserId })"><img src="/images/profile.png"></a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="propsIndex" ui-sref-active="active"><img src="/images/search.png"></a></li>
+        <li ng-if="(main.isAuthenticated() && main.currentUserGroupId)"><a ui-sref="groupsHome({ id: main.currentUserGroupId })" ui-sref-active="active"><img src="/images/group.png"></a></li>
+        <li ng-if="main.isAuthenticated() && !main.currentUserGroupId"><a ui-sref="groupsNew" ui-sref-active="active"><img src="/images/addgroup.png"></a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active"><img src="/images/profile.png"></a></li>
         <li ng-if="main.isAuthenticated()"><a id="logout-link" ng-click="main.logout()" href="#"><img src="/images/logout.png"></a></li>
-        <li ng-if="!main.isAuthenticated()"><a ui-sref="login"><img src="/images/login.png"></a></li>
-        <li ng-if="!main.isAuthenticated()"><a ui-sref="register"><img src="/images/register.png"></a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active"><img src="/images/login.png"></a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active"><img src="/images/register.png"></a></li>
       </ul>
     </div>
   </nav>
