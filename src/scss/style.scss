@@ -16,8 +16,7 @@ a {
 }
 
 body {
-  font-family: 'Raleway', serif;
-  // overflow: hidden;
+  font-family: 'Dosis', sans-serif;
 }
 
 .row-centered {
@@ -241,8 +240,7 @@ section {
         }
       }
       &.deleteproperty {
-        margin: 0;
-        margin-top: 20px;
+        margin: 20px 0;
         &:hover {
           background-color: rgb(255, 234, 91);
           transition: all 1.5s ease;
@@ -503,6 +501,7 @@ section {
   button {
     &.deleteimage {
       margin: 5px 0;
+      background-color: #C0C0C0;
     }
     &.deletenote {
       padding: 5px;
@@ -558,6 +557,9 @@ footer {
   padding-top: 10px;
   padding-bottom: 10px;
   border-top: 2px solid $bright-green;
+  &:first-child {
+    float: left;
+  }
 }
 
 .description {

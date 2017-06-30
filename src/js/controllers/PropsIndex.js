@@ -11,9 +11,10 @@ function PropsIndexCtrl($http, $uibModal) {
   vm.limit = 10;
 
   function getProps(){
-    $http.get('/api/properties', { params: {area: vm.area, minimum_beds: vm.beds, maximum_beds: vm.beds}})
+    $http.get('/api/properties', { params: { area: vm.area, minimum_beds: vm.beds, maximum_beds: vm.beds }})
       .then((response) => {
         vm.results = response.data;
+        console.log(vm.results);
       });
   }
 

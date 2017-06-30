@@ -1,28 +1,44 @@
 <section class="container">
   <div>
-    <h1>Search Properties</h1>
+    <h1>Find a Property</h1>
 
     <form class="border">
       <div>
-        <label for="area">Area: </label>
+        <label for="area">Area</label>
         <input type="text" ng-model="propsIndex.area" class="area">
       </div>
       <div>
-        <label for="beds">Number of Beds: </label>
+        <label for="beds">Bedrooms</label>
         <input type="number" ng-model="propsIndex.beds">
       </div>
       <button ng-click="propsIndex.getProps()" class="search">Search</button>
     </form>
-    <h5 class="listings">Found {{propsIndex.results.result_count}} Listings</h5>
+    <h5 ng-if="propsIndex.results.listing" class="listings">Found {{propsIndex.results.result_count}} Listings</h5>
 
-    <div ng-repeat="props in propsIndex.results.listing | limitTo: propsIndex.limit" class="results border">
+    <div ng-repeat="props in propsIndex.results.listing | limitTo: propsIndex.limit" class="results border row">
       <ul>
-        <li><img ng-src="{{props.image_645_430_url}}" class="image"></li>
-        <li><strong>Address: </strong>{{props.displayable_address}}</li>
-        <li><strong>Price Per Month: </strong>£{{props.rental_prices.per_month}}</li>
-        <li><strong>Bedrooms: </strong>{{props.num_bedrooms}}</li>
-        <li><strong>Property Type: </strong>{{props.property_type}}</li>
-        <button ng-click="propsIndex.openModal(props)" class="btn btn-danger">More Info</button>
+        <li>
+
+          <div class="col-xs-12 col-md-6">
+            <img ng-src="{{ props.image_50_38_url }}" class="image">
+            <img ng-src="{{ props.image_80_60_url }}" class="image">
+            <img ng-src="{{ props.image_150_113_url }}" class="image">
+            <img ng-src="{{ image_345_255_url }}" class="image">
+            <img ng-src="{{ props.image_645_430_url }}" class="image">
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <h1>{{props.displayable_address}}</h1>
+            <p>£{{props.rental_prices.per_month}} pcm</p>
+            <p>
+              <div ng-if="props.property_type.includes('house')"><img src="/images/house.png"></div>
+              <div ng-if="props.property_type === 'Flat'"><img src="/images/flat.png"></div>
+            </p>
+            <p>
+              <button ng-click="propsIndex.openModal(props)" class="btn btn-danger">More Info</button>
+            </p>
+          </div>
+        </li>
       </ul>
     </div>
     <div class="row">
