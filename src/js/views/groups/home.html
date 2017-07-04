@@ -9,13 +9,15 @@
     <button ng-click="groupsHome.delete()" class="deleteproperty">Delete Group</button>
   </div>
   <div>
-    <ul ng-repeat="selected in groupsHome.selected.listing" class="border">
+    <ul ng-repeat="selected in groupsHome.selected.listing" class="border propsIndex">
       <li><h1>{{selected.displayable_address}}</h1></li>
       <li><img ng-src="{{selected.image_645_430_url}}"></li>
-      <li><strong>Bedrooms: </strong>{{selected.num_bedrooms}}</li>
-      <li><strong>Bathrooms: </strong>{{selected.num_bathrooms}}</li>
-      <li><strong>Price: </strong>£{{selected.rental_prices.per_month}} ppm</li>
-      <li><strong>Property Type: </strong>{{selected.property_type}}</li>
+
+      <li><span ng-if="selected.property_type.includes('house')"><i class="fa fa-home fa-2x" aria-hidden="true"></i></span><span ng-if="selected.property_type.includes('Flat')"><i class="fa fa-building-o fa-2x" aria-hidden="true"></i></span></li>
+
+      <li><span>{{selected.num_bedrooms}} <i class="fa fa-bed" aria-hidden="true"></i></span><span>{{selected.num_bathrooms}} <i class="fa fa-bath" aria-hidden="true"></i></span></li>
+
+      <li><span>£{{selected.rental_prices.per_month}} pcm</span><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span><span>£{{ selected.rental_prices.per_month / groupsHome.group.users.length | number : 2 }} each</span></li>
       <button ui-sref="groupsPropsShow({ id: groupsHome.group.id, listing_id: selected.listing_id})">Show</button>
     </ul>
   </div>

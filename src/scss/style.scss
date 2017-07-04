@@ -174,17 +174,16 @@ section {
         text-transform: uppercase;
         padding-top: 10px;
         font-weight: bold;
-        font-size: 15px;
+        font-size: 18px;
       }
       input {
         display: block;
-        margin: 0 auto;
-        margin-top: 5px;
-        padding: 3px 10px;
+        margin: 10px auto 10px;
+        padding: 10px 10px;
         width: 500px;
         text-align: center;
         border: 0;
-        border-bottom: 2px solid black;
+        border-bottom: 1px solid $main-green;
         outline: none;
         &.base64 {
           border: none;
@@ -286,7 +285,7 @@ section {
     div {
       p {
         color: red;
-        animation: expandOpen 1s;
+        // font-weight: 800;
       }
     }
     img {
@@ -625,4 +624,18 @@ span {
 
 .margin-bottom {
   margin-bottom: 25px;
+}
+
+.propsIndex {
+  > li {
+    font-size: 26px;
+    &:last-of-type {
+      font-size: 20px;
+      color: $main-green;
+    }
+    > span {
+      margin: 0 10px;
+      color: $main-green;
+    }
+  }
 }
