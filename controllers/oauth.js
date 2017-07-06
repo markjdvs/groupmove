@@ -28,7 +28,6 @@ function facebook(req, res, next) {
     });
   })
   .then((profile) => {
-    console.log(profile);
     return User
       .findOne({ email: profile.email })
       .then((user) => {

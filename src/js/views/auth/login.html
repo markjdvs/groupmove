@@ -6,20 +6,28 @@
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="login.credentials.email" required>
       </div>
+
       <div class="ng-message-error" ng-messages="login.loginForm.email.$error" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched)">
-        <p ng-message="required">Your email is required.</p>
+        <p ng-message="required">Please provide an email address.</p>
       </div>
+
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ng-model="login.credentials.password" required>
       </div>
+
       <div class="ng-message-error" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
         <p ng-message="required">Your password is required.</p>
       </div>
+
       <button class="button">Login</button>
+
     </form>
   </div>
+
   <div>
+
     <button ng-click="login.authenticate('facebook')">Log in with Facebook</button>
+
   </div>
 </section>

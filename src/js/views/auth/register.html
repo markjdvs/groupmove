@@ -1,57 +1,68 @@
 <section class="container">
   <h2>Register</h2>
-  <div>
+  <div class="row">
     <form name="register.registerForm" ng-submit="register.submit()" novalidate>
+
       <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" ng-model="register.user.username" required>
+        <input type="text" name="username" ng-model="register.user.username" placeholder="Username" required>
       </div>
+
       <div class="ng-message-error" ng-messages="register.registerForm.username.$error" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched)">
-        <p ng-message="required">Your username is required.</p>
+        <p ng-message="required">Please provide a username.</p>
       </div>
+
       <div>
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname" ng-model="register.user.firstname" required>
+        <input type="text" name="firstname" ng-model="register.user.firstname" placeholder="First Name" required>
       </div>
+
       <div class="ng-message-error" ng-messages="register.registerForm.firstname.$error" ng-show="(register.registerForm.$submitted || register.registerForm.firstname.$touched)">
-        <p ng-message="required">Your first name is required.</p>
+        <p ng-message="required">Please provide your first name.</p>
       </div>
+
       <div>
-        <label for="surname">Surname</label>
-        <input type="text" name="surname" id="surname" ng-model="register.user.surname" required>
+        <input type="text" name="surname" ng-model="register.user.surname" placeholder="Surname" required>
       </div>
+
       <div class="ng-message-error" ng-messages="register.registerForm.surname.$error" ng-show="(register.registerForm.$submitted || register.registerForm.surname.$touched)">
-        <p ng-message="required">Your surname is required.</p>
+        <p ng-message="required">Please provide your surname.</p>
       </div>
+
       <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" ng-model="register.user.email" required>
+        <input type="email" name="email" ng-model="register.user.email" placeholder="Email address" required>
       </div>
+
       <div class="ng-message-error" ng-messages="register.registerForm.email.$error" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched)">
         <p ng-message="required">Your email is required.</p>
-        <p ng-message="email">A valid email is required.</p>
+        <p ng-message="email">Please provide a valid email.</p>
       </div>
+
       <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" ng-model="register.user.password" required>
+        <input type="password" name="password" ng-model="register.user.password" minlength="6" placeholder="Password" required>
       </div>
-      <div class="ng-message-error" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
+
+      <div class="ng-message-error" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)" >
         <p ng-message="required">Your password is required.</p>
+        <p ng-message="minlength">Your password must be at least 6 characters long.</p>
       </div>
+
       <div>
-        <label for="passwordConfirmation">Password Confirmation</label>
-        <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
+        <input type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" ng-pattern="register.regex" placeholder="Please confirm your password" required>
       </div>
+
       <div class="ng-message-error" ng-messages="register.registerForm.passwordConfirmation.$error" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched)">
-        <p ng-message="required">Your password confirmation is required.</p>
+        <p ng-message="required">Please confirm your password.</p>
+        <p ng-message="pattern">Your passwords do not match.</p>
       </div>
+
       <div class="form-group">
         <label for="base64"></label>
         <input type="file" base64 name="base64" id="base64" ng-model="register.user.base64" required class="base64 form-control">
       </div>
+
       <div class="ng-message-error" ng-messages="register.registerForm.base64.$error" ng-show="(register.registerForm.$submitted)">
-        <p ng-message="required">An image is required.</p>
+        <p ng-message="required">Please provide a profile picture.</p>
       </div>
+
       <button class="button">Register</button>
     </form>
   </div>

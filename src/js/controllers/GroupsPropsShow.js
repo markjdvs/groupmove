@@ -38,7 +38,6 @@ function GroupsPropsShowCtrl(Group, GroupProperty, GroupPropertyNote, GroupPrope
     crimes.getCrimes(vm.listingLat, vm.listingLon)
     .then((data) => {
       vm.crimes = data;
-      console.log(vm.crimes.pieCrimeData);
       return vm.crimes;
     });
   }

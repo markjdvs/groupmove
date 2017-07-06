@@ -2,10 +2,14 @@ angular
   .module('pncApp')
   .controller('RegisterCtrl', RegisterCtrl);
 
-RegisterCtrl.$inject = ['$auth', '$state'];
-function RegisterCtrl($auth, $state) {
+RegisterCtrl.$inject = ['$auth', '$state', '$scope'];
+function RegisterCtrl($auth, $state, $scope) {
   const vm = this;
   vm.user = {};
+
+  $scope.$watch(() => vm.user.password, () => {
+    vm.regex = new RegExp(vm.user.password);
+  });
 
   function submit() {
     if(vm.registerForm.$valid) {
