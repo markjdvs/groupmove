@@ -58,11 +58,11 @@ function Router($locationProvider, $stateProvider, $urlRouterProvider) {
       controller: 'RegisterCtrl as register'
     })
     .state('login', {
-      url: '/login',
+      url: '/',
       templateUrl: 'js/views/auth/login.html',
       controller: 'LoginCtrl as login'
     });
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/');
 
 }

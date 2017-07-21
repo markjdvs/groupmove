@@ -48,7 +48,7 @@ Local crime and geographical data, dependent on the specific property, thereby a
 
 - [Zoopla](https://developer.zoopla.co.uk/docs) is used to search for properties to add to a group's profile page.
 
-- The [Police API](https://data.police.uk/docs/) and [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial) were used to provide local crime and geographic data respectively on individual properties.
+- The [Police API](https://data.police.uk/docs/) and [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial) were used to provide local crime and geographic data respectively on individual properties.!
 
 * The app is deployed via Heroku. [Try it here.](https://groupmove.herokuapp.com/)
 
